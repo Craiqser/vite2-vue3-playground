@@ -1,0 +1,28 @@
+$font: 'Inter var', Helvetica, Arial, sans-serif;
+$font-mono: Verdana, Courier, monospace;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	font-family: $font;
+	font-size: 12px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+	background: #465c7e;
+}
+
+::-webkit-scrollbar-thumb:hover{
+	background: #4b6c9b;
+}
+
+::-webkit-scrollbar-track{
+	background: #223355;
+}

@@ -1,0 +1,23 @@
+$border-color: #848484;
+$border-color-dark: #5a5a5a;
+$border-color-light: #fff;
+$border-shadow-color: #424242;
+
+$panel-background-color: #d6d3ce;
+$panel-height-min: 20px;
+$panel-width-min: 100px;
+
+@mixin panel-border {
+	padding: 4px;
+	box-shadow: -1px -1px $border-shadow-color inset, 1px 1px $panel-background-color inset, -2px -2px $border-color inset, 2px 2px $border-color-light inset;
+}
+
+@mixin panel-borderlight {
+	padding: 4px;
+	box-shadow: -1px -1px $border-shadow-color inset, 1px 1px $border-color-light inset, -2px -2px $border-color inset, 2px 2px $panel-background-color inset;
+}
+
+@mixin panel-borderlight-reverse {
+	padding: 4px;
+	box-shadow: -1px -1px $border-color-light inset, 1px 1px $border-shadow-color inset, -2px -2px $panel-background-color inset, 2px 2px $border-color inset;
+}

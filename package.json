@@ -1,0 +1,31 @@
+{
+	"author": "Craiqser <craiqser@gmail.com>",
+	"bugs": {
+		"email": "craiqser@gmail.com",
+		"url": "https://github.com/Craiqser/vite2-vue3-playground/issues"
+	},
+	"dependencies": {
+		"js-cookie": "^3.0.0-rc.1",
+		"vue": "^3.0.5",
+		"vue-router": "4.0.3",
+		"vuex": "^4.0.0"
+	},
+	"devDependencies": {
+		"@vitejs/plugin-vue": "^1.1.4",
+		"@vue/compiler-sfc": "^3.0.5",
+		"sass": "^1.32.8",
+		"vite": "^2.0.1"
+	},
+	"license": "MIT",
+	"name": "vite-vue3-playground",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Craiqser/vite2-vue3-playground.git"
+	},
+	"scripts": {
+		"dev": "vite --open",
+		"build": "vite build"
+	},
+	"version": "1.0.0"
+}

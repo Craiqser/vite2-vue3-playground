@@ -1,0 +1,7 @@
+dist/
+dist-ssr/
+node_modules/
+
+*.local
+*.log
+yarn.lock
