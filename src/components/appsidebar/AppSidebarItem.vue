@@ -2,6 +2,11 @@
 import { defineProps } from 'vue';
 
 defineProps({
+	opened: {
+		default: true,
+		required: false,
+		type: Boolean
+	},
 	route: {
 		require: true,
 		type: String
@@ -18,7 +23,7 @@ defineProps({
 <router-link :to='{ name: route }'>
 	<div>
 		<slot />
-		<span>{{ routeName ? routeName : route }}</span>
+		<span v-show='opened'>{{ routeName ? routeName : route }}</span>
 	</div>
 </router-link>
 </template>
@@ -32,7 +37,7 @@ div {
 
 	span {
 		margin-left: $sidebar-padding;
-		padding-left: $sidebar-padding;
+		padding: 0 $sidebar-padding;
 	}
 }
 </style>

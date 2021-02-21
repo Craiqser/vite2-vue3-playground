@@ -25,7 +25,7 @@ defineProps({
 .hamburger {
 	height: $header-height;
 	vertical-align: middle;
-	width: $sidebar-width;
+	width: $sidebar-ico-size + $sidebar-padding * 2;
 
 	cursor: pointer;
 	transition-duration: .1s;

@@ -5,7 +5,8 @@ const config = {
 	plugins: [vue()],
 	resolve: {
 		alias: {
-			'~/': `${resolve(__dirname, 'src')}/`
+			'~/': `${resolve(__dirname, 'src')}/`,
+			'@/': `${resolve(__dirname, 'src')}/components/`,
 		}
 	},
 	server: {

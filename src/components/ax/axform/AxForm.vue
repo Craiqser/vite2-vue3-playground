@@ -32,5 +32,6 @@ defineProps({
 	@include panel-border;
 	background-color: $panel-background-color;
 	cursor: default;
+	overflow: hidden;
 }
 </style>

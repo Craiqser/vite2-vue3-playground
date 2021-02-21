@@ -3,7 +3,7 @@ import { computed, defineProps } from 'vue';
 
 const props = defineProps({
 	x: {
-		default: 5,
+		default: 50,
 		required: false,
 		type: Number,
 		validator: function(value) {
@@ -11,7 +11,7 @@ const props = defineProps({
 		}
 	},
 	y: {
-		default: 5,
+		default: 20,
 		required: false,
 		type: Number,
 		validator: function(value) {
