@@ -7,7 +7,7 @@ import AppHeader from './AppHeader.vue';
 import AppSidebar from '@/appsidebar/AppSidebar.vue';
 
 const sidebarStatusKey = 'sbStatus';
-const sidebarOpen = ref(!!+StorageLocal.get(sidebarStatusKey, 0));
+const sidebarOpen = ref(!!+StorageLocal.get(sidebarStatusKey, 1));
 
 const sidebarToggle = () => {
 	sidebarOpen.value = !sidebarOpen.value;

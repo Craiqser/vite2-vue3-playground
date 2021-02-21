@@ -12,6 +12,10 @@ body {
 	font-size: 12px;
 }
 
+ol, ul {
+	list-style: none;
+}
+
 ::-webkit-scrollbar {
 	width: 10px;
 }

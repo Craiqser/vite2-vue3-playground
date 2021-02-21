@@ -1,8 +1,6 @@
 <script setup>
 import { defineProps } from 'vue';
-
 import AxFormCaption from './AxFormCaption.vue';
-import ElDrag from './../../eldrag/ElDrag.vue';
 
 defineProps({
 	caption: {
@@ -14,12 +12,10 @@ defineProps({
 </script>
 
 <template>
-<el-drag>
-	<div class='ax-form'>
-		<ax-form-caption ico=''>{{ caption }}</ax-form-caption>
-		<div><slot /></div>
-	</div>
-</el-drag>
+<div class='ax-form'>
+	<ax-form-caption ico=''>{{ caption }}</ax-form-caption>
+	<div><slot /></div>
+</div>
 </template>
 
 <style scoped lang='scss'>
@@ -28,6 +24,9 @@ defineProps({
 .ax-form {
 	min-height: $panel-height-min;
 	min-width: $panel-width-min;
+
+	height: 150px;
+	width: 500px;
 
 	@include panel-border;
 	background-color: $panel-background-color;

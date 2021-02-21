@@ -1,6 +1,7 @@
 <script setup>
-import AxForm from '~/components/ax/axform/AxForm.vue';
-import AxTree from '~/components/ax/axtree/AxTree.vue';
+import AxForm from '@/ax/axform/AxForm.vue';
+import AxTree from '@/ax/axtree/AxTree.vue';
+import ElDrag from '@/eldrag/ElDrag.vue';
 
 const treeData = { // Demo data.
 	id: 0,
@@ -20,7 +21,9 @@ const treeData = { // Demo data.
 </script>
 
 <template>
-<ax-form>
-	<ax-tree :treeData='treeData' />
-</ax-form>
+<el-drag>
+	<ax-form caption='Карточка товара - тест'>
+		<ax-tree :treeData='treeData' />
+	</ax-form>
+</el-drag>
 </template>
