@@ -21,7 +21,7 @@ const treeData = { // Demo data.
 </script>
 
 <template>
-<el-drag>
+<el-drag :dragSelectors='".ax-form-caption"'>
 	<ax-form caption='Карточка товара - тест'>
 		<ax-tree :treeData='treeData' />
 	</ax-form>

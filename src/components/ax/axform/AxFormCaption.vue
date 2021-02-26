@@ -4,10 +4,12 @@ import { defineProps } from 'vue';
 defineProps({
 	buttons: {
 		default: [true, true, true],
+		require: false,
 		type: Array
 	},
 	icoPath: {
 		default: './src/components/ax/theme/caption-ico.png',
+		require: false,
 		type: String
 	}
 });
