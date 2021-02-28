@@ -1,50 +1,70 @@
 <script setup>
-import { computed, defineProps, onMounted, ref } from 'vue';
+import { computed, defineProps, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
+import { listenersAdd, listenersRemove } from './useElDrag.js';
 
-defineProps({
-	dragSelectors: {
+const props = defineProps({
+	dndSelectors: {
 		default: '',
 		require: false,
 		type: String
 	}
 });
 
-let dragElements = [];
-const dragging = false;
-
+let dndActivators = [];
 const el = ref(null);
-let elParent = null;
 
-const xy = ref({
-	x: 50,
-	y: 40
+const elClassOptions = {
+	'dnd-act': { mode: 1, cursor: 'drag' }
+};
+
+let elDraggable = ref(false);
+const elPos = reactive({ x: 0, y: 0 });
+const elStyle = computed(() => ({ left: elPos.x, top: elPos.y }));
+
+const dndStartHandler = (event) => {
+	let elClass = 'dnd-act';
+	document.body.style.cursor = elClassOptions[elClass].cursor;
+
+	if (el.value.contains(event.target)) {
+		elDraggable.value = true;
+	}
+
+	console.log('start');
+	console.dir(event.target);
+};
+
+const dndMoveHandler = (event) => {
+};
+
+const dndStopHandler = (event) => {
+	document.body.style.cursor = '';
+	console.log('stop');
+	console.dir(event.target);
+};
+
+onBeforeUnmount(() => {
+	if (el && props.dndSelectors) {
+		listenersRemove(dndStartHandler, dndMoveHandler, dndStopHandler);
+	};
 });
 
-const elStyle = computed(() => ({
-	left: xy.value.x + 'px',
-	top: xy.value.y + 'px'
-}));
-
 onMounted(() => {
-	if (dragSelectors) {
-		dragElements = el.value.querySelectorAll(dragSelectors);
-		dragElements.forEach(element => {
-			element.classList.add('drag-act');
+	if (el && props.dndSelectors) {
+		dndActivators = el.value.querySelectorAll(props.dndSelectors);
+		dndActivators.forEach(element => {
+			element.classList.add('dnd-act');
 		});
-	}
-	console.dir(el.value);
-	console.dir(dragElements);
-	// xy.value.x = el.value.clientLeft;
-	// xy.value.y = el.value.clientTop;
-	// elParent = el.value.parentElement;
-	// box.height = elParent.clientHeight;
-	// box.width = elParent.clientWidth;
-	// console.log(xy.value.x, xy.value.y, box.width, box.height);
+
+		elPos.x = el.value.offsetLeft;
+		elPos.y = el.value.offsetTop;
+
+		listenersAdd(dndStartHandler, dndMoveHandler, dndStopHandler);
+	};
 });
 </script>
 
 <template>
-<div ref='el' style='position: absolute' :style='elStyle'>
+<div ref='el' style='position: absolute;' :style='elStyle' :draggable='elDraggable'>
 	<slot />
 </div>
 </template>
