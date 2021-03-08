@@ -29,6 +29,8 @@ const dragEndHandler = (event) => {
 	elPosY.value += (event.clientY - mousePos.y);
 };
 
+const dragoverHandler = (event) => event.preventDefault();
+
 const dragStartHandler = (event) => {
 	mousePos.x = event.clientX;
 	mousePos.y = event.clientY;
@@ -44,6 +46,10 @@ onBeforeUnmount(() => {
 		element.classList.remove('dnd-act');
 		element.removeEventListener('mousedown', mousedownHandler);
 	});
+
+	if (el.value.parentElement) {
+		el.value.parentElement.removeEventListener('dragover', dragoverHandler);
+	}
 });
 
 onMounted(() => {
@@ -58,7 +64,7 @@ onMounted(() => {
 		elPosY.value = el.value.offsetTop;
 
 		if (el.value.parentElement) {
-			el.value.parentElement.addEventListener('dragover', (event) => event.preventDefault());
+			el.value.parentElement.addEventListener('dragover', dragoverHandler);
 		}
 	};
 });

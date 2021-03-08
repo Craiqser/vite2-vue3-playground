@@ -2,6 +2,7 @@ import { createApp } from 'vue';
 import App from './App.vue';
 import router from './router';
 // import store from './store';
+import 'windi.css';
 
 import AppLayout from '~/layouts/AppLayout.vue';
 import AxLayout from '~/layouts/AxLayout.vue';

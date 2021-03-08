@@ -1,8 +1,12 @@
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
+import WindiCSS from 'vite-plugin-windicss';
 
 const config = {
-	plugins: [vue()],
+	plugins: [
+		vue(),
+		WindiCSS({ safelist: '' })
+	],
 	resolve: {
 		alias: {
 			'~/': `${resolve(__dirname, 'src')}/`,
