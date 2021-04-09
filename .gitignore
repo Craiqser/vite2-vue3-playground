@@ -4,4 +4,4 @@ node_modules/
 
 *.local
 *.log
-yarn.lock
+package-lock.json
