@@ -8,10 +8,8 @@ const props = defineProps({
 		type: Object
 	}
 });
-
 const isFolder = props.item.childs && props.item.childs.length;
 const isOpen = ref(false);
-
 const nodeToggle = () => {
 	if (isFolder) {
 		isOpen.value = !isOpen.value;
@@ -21,12 +19,12 @@ const nodeToggle = () => {
 
 <template>
 <li>
-	<div @click='nodeToggle'>
+	<div @click="nodeToggle">
 		{{ item.name }}
-		<span v-if='isFolder'>[{{ isOpen ? '-' : '+' }}]</span>
+		<span v-if="isFolder">[{{ isOpen ? '-' : '+' }}]</span>
 	</div>
-	<ul v-show='isOpen' v-if='isFolder'>
-		<ax-tree-item class='ax-tree-item' v-for='child in item.childs' :key='child.id' :item='child' />
+	<ul v-show="isOpen" v-if="isFolder">
+		<ax-tree-item v-for="child in item.childs" :key="child.id" :item="child" class="ax-tree-item" />
 	</ul>
 </li>
 </template>

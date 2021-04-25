@@ -1,4 +1,4 @@
-import { ref, unref } from 'vue';
+import { unref } from 'vue';
 
 export function useTree(treeData) {
 	function filterByLevel(level = 1, levelCurrent = 1, list) {
@@ -21,4 +21,4 @@ export function useTree(treeData) {
 	}
 
 	return { filterByLevel };
-};
+}

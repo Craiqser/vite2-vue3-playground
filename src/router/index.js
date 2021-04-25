@@ -1,14 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import pages from './routes/pages';
-
 import Admin from '~/views/Admin.vue';
 import Ax from '~/views/ax/Ax.vue';
 import Dashboard from '~/views/Dashboard.vue';
 import Projects from '~/views/Projects.vue';
 import Settings from '~/views/Settings.vue';
+import pages from './routes/pages';
 
-const routes =
-[
+const routes = [
 	{
 		path: '/admin',
 		name: 'Admin',

@@ -1,10 +1,9 @@
 <script setup>
-import { ref } from 'vue';
-import StorageLocal from '~/store/local.js';
-
 import AppFooter from './AppFooter.vue';
 import AppHeader from './AppHeader.vue';
 import AppSidebar from '@/appsidebar/AppSidebar.vue';
+import StorageLocal from '~/store/local.js';
+import { ref } from 'vue';
 
 const sidebarStatusKey = 'sbStatus';
 const sidebarOpen = ref(!!+StorageLocal.get(sidebarStatusKey, 1));
@@ -17,14 +16,16 @@ const sidebarToggle = () => {
 	} else {
 		StorageLocal.set(sidebarStatusKey, 0);
 	}
-}
+};
 </script>
 
 <template>
-<app-header :opened='sidebarOpen' @sidebarToggle='sidebarToggle' />
+<app-header :opened="sidebarOpen" @sidebarToggle="sidebarToggle" />
 <main>
-	<app-sidebar :opened='sidebarOpen' />
-	<section class='main-content'><slot /></section>
+	<app-sidebar :opened="sidebarOpen" />
+	<section class="main-content">
+		<slot />
+	</section>
 </main>
 <app-footer />
 </template>

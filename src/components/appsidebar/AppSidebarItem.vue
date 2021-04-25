@@ -20,10 +20,10 @@ defineProps({
 </script>
 
 <template>
-<router-link :to='{ name: route }'>
+<router-link :to="{ name: route }">
 	<div>
 		<slot />
-		<span v-show='opened'>{{ routeName ? routeName : route }}</span>
+		<span v-show="opened">{{ routeName ? routeName : route }}</span>
 	</div>
 </router-link>
 </template>

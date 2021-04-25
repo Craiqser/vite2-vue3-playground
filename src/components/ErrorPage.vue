@@ -15,9 +15,9 @@ defineProps({
 </script>
 
 <template>
-<div class='error-view'>
-	<h1 class='code'>{{ `{ ${code} }` }}</h1>
-	<p class='descr'>{{ descr }}</p>
+<div class="error-view">
+	<h1 class="code">{{ `{ ${code} }` }}</h1>
+	<p class="descr">{{ descr }}</p>
 </div>
 </template>
 

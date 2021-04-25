@@ -1,6 +1,6 @@
-import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path';
 import WindiCSS from 'vite-plugin-windicss';
+import { resolve } from 'path';
+import vue from '@vitejs/plugin-vue';
 
 const config = {
 	plugins: [
@@ -10,7 +10,7 @@ const config = {
 	resolve: {
 		alias: {
 			'~/': `${resolve(__dirname, 'src')}/`,
-			'@/': `${resolve(__dirname, 'src')}/components/`,
+			'@/': `${resolve(__dirname, 'src')}/components/`
 		}
 	},
 	server: {

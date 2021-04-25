@@ -21,12 +21,12 @@ const elStyle = computed(() => ({
 	top: elPosY.value + 'px'
 }));
 
-const mousePos = {x: 0, y: 0};
+const mousePos = { x: 0, y: 0 };
 
 const dragEndHandler = (event) => {
 	elDraggable.value = false;
-	elPosX.value += (event.clientX - mousePos.x);
-	elPosY.value += (event.clientY - mousePos.y);
+	elPosX.value += event.clientX - mousePos.x;
+	elPosY.value += event.clientY - mousePos.y;
 };
 
 const dragoverHandler = (event) => event.preventDefault();
@@ -42,7 +42,7 @@ const mousedownHandler = (event) => {
 };
 
 onBeforeUnmount(() => {
-	dndActivators.forEach(element => {
+	dndActivators.forEach((element) => {
 		element.classList.remove('dnd-act');
 		element.removeEventListener('mousedown', mousedownHandler);
 	});
@@ -53,9 +53,9 @@ onBeforeUnmount(() => {
 });
 
 onMounted(() => {
-	if (el && props.dndSelectors) {
+	if (el.value && props.dndSelectors) {
 		dndActivators = el.value.querySelectorAll(props.dndSelectors);
-		dndActivators.forEach(element => {
+		dndActivators.forEach((element) => {
 			element.classList.add('dnd-act');
 			element.addEventListener('mousedown', mousedownHandler, true);
 		});
@@ -66,12 +66,12 @@ onMounted(() => {
 		if (el.value.parentElement) {
 			el.value.parentElement.addEventListener('dragover', dragoverHandler);
 		}
-	};
+	}
 });
 </script>
 
 <template>
-<div ref='el' :style='elStyle' :draggable='elDraggable' @dragstart.stop='dragStartHandler' @dragend.stop='dragEndHandler'>
+<div ref="el" :style="elStyle" :draggable="elDraggable" @dragstart.stop="dragStartHandler" @dragend.stop="dragEndHandler">
 	<slot />
 </div>
 </template>

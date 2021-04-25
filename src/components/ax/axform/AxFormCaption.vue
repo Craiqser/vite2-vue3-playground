@@ -16,17 +16,17 @@ defineProps({
 </script>
 
 <template>
-<div class='ax-form-caption'>
-	<img alt='caption ico' :src='icoPath' />
+<div class="ax-form-caption">
+	<img alt="caption ico" :src="icoPath">
 	<span><slot /></span>
-	<button v-if='buttons[0]' disabled>
-		<svg viewBox='0 0 11 9'><path fill='none' stroke='black' d='M2,7 h6 v1 h-6 z' /></svg>
+	<button v-if="buttons[0]" disabled>
+		<svg viewBox="0 0 11 9"><path fill="none" stroke="black" d="M2,7 h6 v1 h-6 z" /></svg>
 	</button>
-	<button v-if='buttons[1]' disabled>
-		<svg viewBox='0 0 11 9'><path fill='none' stroke='black' d='M1,0 h8 v8 h-8 v-8 v1 h8' /></svg>
+	<button v-if="buttons[1]" disabled>
+		<svg viewBox="0 0 11 9"><path fill="none" stroke="black" d="M1,0 h8 v8 h-8 v-8 v1 h8" /></svg>
 	</button>
-	<button v-if='buttons[2]' style='margin-left: 2px'>
-		<svg viewBox='0 0 11 9'><path fill='none' stroke='black' d='M2,1 h1 v1 h1 v1 h3 v-1 h1 v-1 h1 M2,7 h1 v-1 h1 v-1 h1 v-1 h1 v1 h1 v1 h1 v1 h1' /></svg>
+	<button v-if="buttons[2]" style="margin-left: 2px">
+		<svg viewBox="0 0 11 9"><path fill="none" stroke="black" d="M2,1 h1 v1 h1 v1 h3 v-1 h1 v-1 h1 M2,7 h1 v-1 h1 v-1 h1 v-1 h1 v1 h1 v1 h1 v1 h1" /></svg>
 	</button>
 </div>
 </template>

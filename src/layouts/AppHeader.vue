@@ -3,7 +3,6 @@ import { defineEmit, defineProps } from 'vue';
 import Hamburger from '~/components/Hamburger.vue';
 
 defineEmit(['sidebarToggle']);
-
 defineProps({
 	opened: {
 		required: true,
@@ -14,8 +13,8 @@ defineProps({
 
 <template>
 <header>
-	<hamburger :opened='opened' @toggle="$emit('sidebarToggle')" />
-	<div class='menu-top'>
+	<hamburger :opened="opened" @toggle="$emit('sidebarToggle')" />
+	<div class="menu-top">
 		<span>MenuItem</span>
 	</div>
 </header>

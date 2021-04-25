@@ -12,12 +12,12 @@ class StoreLocal {
 		} else {
 			return defaultValue;
 		}
-	};
+	}
 
 	set(key, value) {
 		const item = { v: value }; //, t: parseInt(Date.now() / 1000) };
 		localStorage.setItem(key, JSON.stringify(item));
 	}
-};
+}
 
 export default new StoreLocal();

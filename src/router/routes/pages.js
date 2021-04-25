@@ -1,5 +1,4 @@
-const pages =
-[
+const pages = [
 	{
 		component: () => import('~/pages/404.vue'),
 		name: '404',
@@ -9,6 +8,6 @@ const pages =
 		path: '/:pathMatch(.*)*',
 		redirect: { name: '404' }
 	}
-]
+];
 
 export default pages;

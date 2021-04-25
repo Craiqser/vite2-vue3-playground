@@ -1,6 +1,6 @@
 <script setup>
-import { defineProps } from 'vue';
 import AxTreeItem from './AxTreeItem.vue';
+import { defineProps } from 'vue';
 
 defineProps({
 	treeData: {
@@ -11,8 +11,8 @@ defineProps({
 </script>
 
 <template>
-<ul class='ax-tree'>
-	<ax-tree-item :item='treeData' />
+<ul class="ax-tree">
+	<ax-tree-item :item="treeData" />
 </ul>
 </template>
 

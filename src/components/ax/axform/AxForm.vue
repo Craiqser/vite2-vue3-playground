@@ -1,6 +1,6 @@
 <script setup>
-import { defineProps } from 'vue';
 import AxFormCaption from './AxFormCaption.vue';
+import { defineProps } from 'vue';
 
 defineProps({
 	caption: {
@@ -12,8 +12,8 @@ defineProps({
 </script>
 
 <template>
-<div class='ax-form'>
-	<ax-form-caption ico=''>{{ caption }}</ax-form-caption>
+<div class="ax-form">
+	<ax-form-caption ico="">{{ caption }}</ax-form-caption>
 	<div><slot /></div>
 </div>
 </template>

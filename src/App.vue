@@ -7,7 +7,7 @@ const layout = computed(() => `${currentRoute.value.meta.layout || 'app'}-layout
 </script>
 
 <template>
-<component :is='layout'>
+<component :is="layout">
 	<router-view />
 </component>
 </template>
