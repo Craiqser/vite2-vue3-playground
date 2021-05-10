@@ -6,20 +6,20 @@
 	},
 	"dependencies": {
 		"js-cookie": "^3.0.0-rc.1",
-		"vue": "^3.0.11",
+		"vue": "^3.1.0-beta.2",
 		"vue-router": "4.0.6",
 		"vuex": "^4.0.0"
 	},
 	"devDependencies": {
-		"@craiqser/eslint-config": "^1.0.2",
+		"@craiqser/eslint-config": "^1.0.3",
 		"@vitejs/plugin-vue": "^1.2.2",
-		"@vue/compiler-sfc": "^3.0.11",
-		"eslint": "^7.25.0",
+		"@vue/compiler-sfc": "^3.1.0-beta.2",
+		"eslint": "^7.26.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-vue": "^7.9.0",
 		"sass": "^1.32.12",
-		"vite": "^2.2.3",
-		"vite-plugin-windicss": "0.16.0-beta.6"
+		"vite": "^2.2.4",
+		"vite-plugin-windicss": "^0.16.0-beta.14"
 	},
 	"license": "MIT",
 	"name": "vite-vue3-playground",
